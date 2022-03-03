@@ -1,4 +1,4 @@
-package com.example.demo.student;
+package com.aybaroud.datajpa.student;
 
 public enum Gender {
     MALE,

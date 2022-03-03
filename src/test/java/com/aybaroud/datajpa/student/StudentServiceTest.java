@@ -1,11 +1,10 @@
-package com.example.demo.student;
+package com.aybaroud.datajpa.student;
 
-import com.example.demo.student.exception.BadRequestException;
+import com.aybaroud.datajpa.student.exception.BadRequestException;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;

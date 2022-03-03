@@ -1,4 +1,4 @@
-package com.example.demo.student;
+package com.aybaroud.datajpa.student;
 
 import lombok.*;
 
@@ -35,9 +35,9 @@ public class Student {
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private com.example.demo.student.Gender gender;
+    private Gender gender;
 
-    public Student(String name, String email, com.example.demo.student.Gender gender) {
+    public Student(String name, String email, Gender gender) {
         this.name = name;
         this.email = email;
         this.gender = gender;
