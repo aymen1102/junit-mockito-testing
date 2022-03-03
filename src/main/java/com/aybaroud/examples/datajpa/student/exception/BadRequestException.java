@@ -1,4 +1,4 @@
-package com.aybaroud.datajpa.student.exception;
+package com.aybaroud.examples.datajpa.student.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

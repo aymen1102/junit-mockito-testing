@@ -1,4 +1,4 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.examples.datajpa.student;
 
 import lombok.*;
 

@@ -1,5 +1,6 @@
-package com.aybaroud.examples;
+package com.aybaroud.examples.general;
 
+import com.aybaroud.examples.general.Grader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

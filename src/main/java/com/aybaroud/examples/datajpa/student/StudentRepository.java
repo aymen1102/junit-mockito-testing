@@ -1,4 +1,4 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.examples.datajpa.student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
