@@ -38,10 +38,11 @@ class StudentRepositoryTest {
     void itShouldCheckIfStudentEmailDoesNotExists() {
         // given
         String email = "amina@gmail.com";
+
         // when
         Boolean expected = underTest.selectExistsEmail(email);
+
         // then
         Assertions.assertThat(expected).isFalse();
-
     }
 }

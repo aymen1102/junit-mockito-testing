@@ -13,7 +13,7 @@ class TodoBusinessImplTest {
     @Test
     void getToDoListRelatedToSpring_withMock() {
         TodoService todoService = Mockito.mock(TodoService.class);
-        var todoList = Arrays.asList("Learn spring", "Leran java", "Learn spring boot");
+        List todoList = Arrays.asList("Learn spring", "Leran java", "Learn spring boot");
         Mockito.when(todoService.getToDoListFromUser("Aymen"))
                 .thenReturn(todoList);
 
