@@ -51,7 +51,6 @@ class StudentServiceTest {
         verify(studentRepository).save(studentArgumentCaptor.capture());
 
         Student capturedStudent = studentArgumentCaptor.getValue();
-
         assertThat(capturedStudent).isEqualTo(student);
     }
 

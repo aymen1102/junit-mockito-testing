@@ -6,14 +6,14 @@ import org.mockito.Mockito;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;è
 
 class TodoBusinessImplTest {
 
     @Test
     void getToDoListRelatedToSpring_withMock() {
         TodoService todoService = Mockito.mock(TodoService.class);
-        List todoList = Arrays.asList("Learn spring", "Leran java", "Learn spring boot");
+        List todoList = Arrays.asList("Learn spring", "Learn java", "Learn spring boot");
         Mockito.when(todoService.getToDoListFromUser("Aymen"))
                 .thenReturn(todoList);
 
