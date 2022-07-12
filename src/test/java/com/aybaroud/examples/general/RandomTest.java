@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RandomTest {
-
+/*
     Random random;
 
     @BeforeAll
@@ -56,5 +56,5 @@ class RandomTest {
         boolean expected = true;
         assertEquals(actual,expected);
         assertTrue(actual);
-    }
+    }*/
 }
