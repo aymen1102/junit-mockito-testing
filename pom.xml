@@ -12,6 +12,10 @@
     <artifactId>junit-testing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>Demo project for Junit</description>
+    <properties>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
