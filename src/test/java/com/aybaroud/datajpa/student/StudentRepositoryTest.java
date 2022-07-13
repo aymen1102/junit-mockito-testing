@@ -1,4 +1,4 @@
-package com.aybaroud.examples.datajpa.student;
+package com.aybaroud.datajpa.student;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;

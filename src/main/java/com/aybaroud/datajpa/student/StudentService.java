@@ -1,7 +1,7 @@
-package com.aybaroud.examples.datajpa.student;
+package com.aybaroud.datajpa.student;
 
-import com.aybaroud.examples.datajpa.student.exception.StudentNotFoundException;
-import com.aybaroud.examples.datajpa.student.exception.BadRequestException;
+import com.aybaroud.datajpa.student.exception.StudentNotFoundException;
+import com.aybaroud.datajpa.student.exception.BadRequestException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

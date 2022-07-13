@@ -1,6 +1,6 @@
-package com.aybaroud.examples.datajpa.student;
+package com.aybaroud.datajpa.student;
 
-import com.aybaroud.examples.datajpa.student.exception.BadRequestException;
+import com.aybaroud.datajpa.student.exception.BadRequestException;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

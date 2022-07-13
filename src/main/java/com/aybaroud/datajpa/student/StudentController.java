@@ -1,4 +1,4 @@
-package com.aybaroud.examples.datajpa.student;
+package com.aybaroud.datajpa.student;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

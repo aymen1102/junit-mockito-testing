@@ -1,4 +1,4 @@
-package com.aybaroud.examples.todo;
+package com.aybaroud.todo;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
