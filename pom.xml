@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>junit-testing</artifactId>
+    <artifactId>junit-mockito-testing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>Demo project for Junit</description>
     <properties>
