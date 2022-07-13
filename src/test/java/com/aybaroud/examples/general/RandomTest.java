@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RandomTest {
-/*
-    Random random;
+
+    static Random random;
 
     @BeforeAll
-    public void beforeAll() {
+    public static void beforeAll() {
         random = new Random();
     }
 
@@ -56,5 +56,5 @@ class RandomTest {
         boolean expected = true;
         assertEquals(actual,expected);
         assertTrue(actual);
-    }*/
+    }
 }
