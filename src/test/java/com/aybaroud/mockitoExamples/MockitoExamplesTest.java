@@ -42,6 +42,7 @@ public class MockitoExamplesTest {
         assertEquals(100, mockedList.size());
     }
 
+    /*
     @Test
     public void whenNotUseSpyAnnotation_thenCorrect() {
         List<String> spyList = Mockito.spy(new ArrayList<String>());
@@ -63,7 +64,7 @@ public class MockitoExamplesTest {
         assertEquals(2, spiedList.size());
         Mockito.doReturn(100).when(spiedList).size();
         assertEquals(100, spiedList.size());
-    }
+    }*/
 
     @Test
     public void whenNotUseCaptorAnnotation_thenCorrect() {
