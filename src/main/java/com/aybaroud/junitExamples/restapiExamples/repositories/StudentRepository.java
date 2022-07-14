@@ -1,4 +1,4 @@
-package com.aybaroud.junitExamples.restapiExamples.Repositories;
+package com.aybaroud.junitExamples.restapiExamples.repositories;
 
 import com.aybaroud.junitExamples.restapiExamples.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;

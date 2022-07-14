@@ -1,6 +1,6 @@
-package com.aybaroud.junitExamples.restapiExamples;
+package com.aybaroud.junitExamples.restapiExamples.service;
 
-import com.aybaroud.junitExamples.restapiExamples.Repositories.StudentRepository;
+import com.aybaroud.junitExamples.restapiExamples.repositories.StudentRepository;
 import com.aybaroud.junitExamples.restapiExamples.model.Gender;
 import com.aybaroud.junitExamples.restapiExamples.model.Student;
 import com.aybaroud.junitExamples.restapiExamples.exception.BadRequestException;
