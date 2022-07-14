@@ -1,5 +1,8 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.junitExamples.restapiExamples;
 
+import com.aybaroud.junitExamples.restapiExamples.Repositories.StudentRepository;
+import com.aybaroud.junitExamples.restapiExamples.model.Gender;
+import com.aybaroud.junitExamples.restapiExamples.model.Student;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -31,17 +34,14 @@ class StudentRepositoryTest {
         Boolean expected = underTest.selectExistsEmail(email);
         // then
         Assertions.assertThat(expected).isTrue();
-
     }
 
     @Test
     void itShouldCheckIfStudentEmailDoesNotExists() {
         // given
         String email = "amina@gmail.com";
-
         // when
         Boolean expected = underTest.selectExistsEmail(email);
-
         // then
         Assertions.assertThat(expected).isFalse();
     }

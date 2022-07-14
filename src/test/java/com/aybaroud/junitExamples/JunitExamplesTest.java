@@ -6,84 +6,101 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Run with coverage to get % of tested code in JunitExamples class
 public class JunitExamplesTest {
 
     @BeforeAll
-    public static void init(){
-        System.out.println("Before all init() method is called");
+    public static void beforeAll(){
+        System.out.println("les tests seront exécutés...");
     }
 
     @BeforeEach
-    void setUp() {
-        System.out.println("Before each setUp() method is called");
+    void beforeEach() {
+        System.out.println("Before each...");
     }
 
     @AfterEach
-    void tearDown() {
-        System.out.println("Before each tearDown() method is called");
+    void afterEach() {
+        System.out.println("After each...");
     }
 
     @AfterAll
     public static void afterAll(){
-        System.out.println("after all afterAll() method  is called");
+        System.out.println("les tests sont terminés");
     }
+
 
     /////////////////////////////////////////////////////////////////////////////////////
     ///                          determineLetterGrade                                 ///
     /////////////////////////////////////////////////////////////////////////////////////
     @Test
-    void negativeNumberShouldReturnIllegalArgumentException() {
+    void testNegativeNumberShouldReturnIllegalArgumentException() {
         JunitExamples junitExamples = new JunitExamples();
         assertThrows(IllegalArgumentException.class,
                 () -> junitExamples.determineLetterGrade(-1));
     }
 
     @Test
-    void fiftyNineShouldReturnF() {
+    void testFiftyNineShouldReturnF() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals('F',junitExamples.determineLetterGrade(59));
+        char expected = 'F';
+        char actual = junitExamples.determineLetterGrade(59);
+        assertEquals(expected,actual);
     }
 
     @Test
-    void sixtyNineShouldReturnD() {
+    void testSixtyNineShouldReturnD() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals('D',junitExamples.determineLetterGrade(69));
+        char expected = 'F';
+        char actual = junitExamples.determineLetterGrade(59);
+        assertEquals(expected,actual);
     }
 
     @Test
-    void seventyNineShouldReturnC() {
+    void testSeventyNineShouldReturnC() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals('C',junitExamples.determineLetterGrade(79));
+        char expected = 'C';
+        char actual = junitExamples.determineLetterGrade(79);
+        assertEquals(expected,actual);
     }
 
     @Test
-    void eightyNineShouldReturnB() {
+    void testEightyNineShouldReturnB() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals('B',junitExamples.determineLetterGrade(89));
+        char expected = 'B';
+        char actual = junitExamples.determineLetterGrade(89);
+        assertEquals(expected,actual);
     }
 
     @Test
-    void ninetyNineShouldReturnA() {
+    void testNinetyNineShouldReturnA() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals('A',junitExamples.determineLetterGrade(99));
+        char expected = 'F';
+        char actual = junitExamples.determineLetterGrade(59);
+        assertEquals(expected,actual);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
     ///                          add                                                  ///
     /////////////////////////////////////////////////////////////////////////////////////
     @Test
-    void twoPlusTwoShouldEqualFour() {
+    void testTwoPlusTwoShouldEqualFour() {
         JunitExamples junitExamples = new JunitExamples();
-        assertEquals(4,junitExamples.add(2,2));
-        assertNotEquals(5,junitExamples.add(2,2));
-        assertTrue(junitExamples.add(2,2) == 4);
+        int expected = 4;
+        int unexpected = 5;
+        int actual = junitExamples.add(2, 2);
+        assertEquals(expected,actual);
+        assertNotEquals(unexpected,actual);
+        assertTrue(actual == expected);
     }
 
     @RepeatedTest(3)
     void testAdd(RepetitionInfo repetitionInfo){
         JunitExamples junitExamples = new JunitExamples();
         System.out.println("Running test number "+repetitionInfo.getCurrentRepetition());
-        assertEquals(4,junitExamples.add(2,2));
+        int expected = 4;
+        int actual = junitExamples.add(2, 2);
+        assertEquals(expected,actual);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -92,8 +109,9 @@ public class JunitExamplesTest {
     @Test
     void testSquare() {
         JunitExamples junitExamples = new JunitExamples();
-        int squareOf5 = junitExamples.square(5);
-        assertEquals(25,squareOf5);
+        int expected = 25;
+        int actual = junitExamples.square(5);
+        assertEquals(expected,actual);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -102,8 +120,9 @@ public class JunitExamplesTest {
     @Test
     void testCountA() {
         JunitExamples junitExamples = new JunitExamples();
-        int aNumber = junitExamples.countA("American");
-        assertEquals(2,aNumber);
+        int expected = 2;
+        int actual = junitExamples.countA("American");
+        assertEquals(expected,actual);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +133,7 @@ public class JunitExamplesTest {
         JunitExamples junitExamples = new JunitExamples();
         String actual = junitExamples.truncateAInTheTwoFirstPosition("AACD");
         String expected = "CD";
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
 
     @Test
@@ -122,7 +141,15 @@ public class JunitExamplesTest {
         JunitExamples junitExamples = new JunitExamples();
         String actual = junitExamples.truncateAInTheTwoFirstPosition("ACD");
         String expected = "CD";
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void testTruncateAInTheTwoFirstPosition_3(){
+        JunitExamples junitExamples = new JunitExamples();
+        String actual = junitExamples.truncateAInTheTwoFirstPosition("AA");
+        String expected = "";
+        assertEquals(expected,actual);
     }
 
     /////////////////////////////////////////////////////////////////////////////////////
@@ -133,7 +160,7 @@ public class JunitExamplesTest {
         JunitExamples junitExamples = new JunitExamples();
         boolean actual = junitExamples.areFirstAndLastTwoCharactersTheSame("ABCD");
         boolean expected = false;
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
         assertFalse(actual);
     }
 
@@ -142,7 +169,25 @@ public class JunitExamplesTest {
         JunitExamples junitExamples = new JunitExamples();
         boolean actual = junitExamples.areFirstAndLastTwoCharactersTheSame("ABAB");
         boolean expected = true;
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
+        assertTrue(actual);
+    }
+
+    @Test
+    void testAreFirstAndLastTwoCharactersTheSame_3() {
+        JunitExamples junitExamples = new JunitExamples();
+        boolean actual = junitExamples.areFirstAndLastTwoCharactersTheSame("A");
+        boolean expected = false;
+        assertEquals(expected,actual);
+        assertFalse(actual);
+    }
+
+    @Test
+    void testAreFirstAndLastTwoCharactersTheSame_4() {
+        JunitExamples junitExamples = new JunitExamples();
+        boolean actual = junitExamples.areFirstAndLastTwoCharactersTheSame("AA");
+        boolean expected = true;
+        assertEquals(expected,actual);
         assertTrue(actual);
     }
 
@@ -161,6 +206,7 @@ public class JunitExamplesTest {
     @Test
     void  testArraySort_Null(){
         int[] actual =null;
-        assertArrayEquals(null, actual);
+        int[] expected = null;
+        assertArrayEquals(expected, actual);
     }
 }

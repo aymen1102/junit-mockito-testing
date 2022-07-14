@@ -1,5 +1,6 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.junitExamples.restapiExamples.Repositories;
 
+import com.aybaroud.junitExamples.restapiExamples.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,5 +1,7 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.junitExamples.restapiExamples.controller;
 
+import com.aybaroud.junitExamples.restapiExamples.model.Student;
+import com.aybaroud.junitExamples.restapiExamples.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

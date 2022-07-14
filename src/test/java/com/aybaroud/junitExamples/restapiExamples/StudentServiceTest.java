@@ -1,6 +1,10 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.junitExamples.restapiExamples;
 
-import com.aybaroud.datajpa.student.exception.BadRequestException;
+import com.aybaroud.junitExamples.restapiExamples.Repositories.StudentRepository;
+import com.aybaroud.junitExamples.restapiExamples.model.Gender;
+import com.aybaroud.junitExamples.restapiExamples.model.Student;
+import com.aybaroud.junitExamples.restapiExamples.exception.BadRequestException;
+import com.aybaroud.junitExamples.restapiExamples.service.StudentService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

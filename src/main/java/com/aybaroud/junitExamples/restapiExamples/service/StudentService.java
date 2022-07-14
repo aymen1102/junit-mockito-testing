@@ -1,7 +1,9 @@
-package com.aybaroud.datajpa.student;
+package com.aybaroud.junitExamples.restapiExamples.service;
 
-import com.aybaroud.datajpa.student.exception.StudentNotFoundException;
-import com.aybaroud.datajpa.student.exception.BadRequestException;
+import com.aybaroud.junitExamples.restapiExamples.Repositories.StudentRepository;
+import com.aybaroud.junitExamples.restapiExamples.model.Student;
+import com.aybaroud.junitExamples.restapiExamples.exception.StudentNotFoundException;
+import com.aybaroud.junitExamples.restapiExamples.exception.BadRequestException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

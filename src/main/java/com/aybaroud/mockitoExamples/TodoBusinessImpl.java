@@ -1,4 +1,4 @@
-package com.aybaroud.todo;
+package com.aybaroud.mockitoExamples;
 
 import lombok.AllArgsConstructor;
 
