@@ -9,20 +9,19 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class MockitoExamplesTest {
+class MockitoExamplesTest {
 
     @Mock
-    List<String> mockedList;
+    private List<String> mockedList;
 
     @Spy
-    List<String> spiedList = new ArrayList<String>();
+    private List<String> spiedList = new ArrayList<>();
 
     @Captor
-    ArgumentCaptor argCaptor;
+    private ArgumentCaptor argCaptor;
 
     @Test
      void whenNotUseMockAnnotation_thenCorrect() {
@@ -43,7 +42,7 @@ public class MockitoExamplesTest {
         assertEquals(100, mockedList.size());
      }
 
-    /*
+
     @Test
     public void whenNotUseSpyAnnotation_thenCorrect() {
         List<String> spyList = Mockito.spy(new ArrayList<String>());
@@ -65,7 +64,7 @@ public class MockitoExamplesTest {
         assertEquals(2, spiedList.size());
         Mockito.doReturn(100).when(spiedList).size();
         assertEquals(100, spiedList.size());
-    }*/
+    }
 
     @Test
     void whenNotUseCaptorAnnotation_thenCorrect() {
@@ -130,13 +129,14 @@ public class MockitoExamplesTest {
         assertThrows(RuntimeException.class, ()->mockList.get(0));
     }
 
+    /**
     /////////////////////////////////////////////////////////////////////////////////////
     ///               getToDoListFromUserget           ToDoListRelatedToSpring        ///
     /////////////////////////////////////////////////////////////////////////////////////
     @Test
     void getToDoListRelatedToSpring_withMock() {
         TodoService todoService = Mockito.mock(TodoService.class);
-        List todoList = Arrays.asList("Learn spring", "Learn java", "Learn spring boot");
+        todoList = Arrays.asList("Learn spring", "Learn java", "Learn spring boot");
         Mockito.when(todoService.getToDoListFromUser("Aymen"))
                 .thenReturn(todoList);
         TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
@@ -153,6 +153,6 @@ public class MockitoExamplesTest {
         TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
         List<String> toDoListRelatedToSpring = todoBusinessImpl.getToDoListRelatedToSpring("Aymen");
         assertEquals(0,toDoListRelatedToSpring.size());
-    }
+    }  */
 
 }

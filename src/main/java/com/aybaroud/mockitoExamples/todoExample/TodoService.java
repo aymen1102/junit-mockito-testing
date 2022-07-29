@@ -1,4 +1,4 @@
-package com.aybaroud.mockitoExamples;
+package com.aybaroud.mockitoExamples.todoExample;
 
 import java.util.List;
 

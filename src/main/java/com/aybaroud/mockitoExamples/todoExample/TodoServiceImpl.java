@@ -1,4 +1,4 @@
-package com.aybaroud.mockitoExamples;
+package com.aybaroud.mockitoExamples.todoExample;
 
 import lombok.AllArgsConstructor;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
-public class TodoBusinessImpl {
+public class TodoServiceImpl {
 
     public TodoService todoService;
 
