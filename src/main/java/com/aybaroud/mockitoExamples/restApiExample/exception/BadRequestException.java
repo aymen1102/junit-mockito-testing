@@ -1,4 +1,4 @@
-package com.aybaroud.junitExamples.restapiExamples.exception;
+package com.aybaroud.mockitoExamples.restApiExample.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

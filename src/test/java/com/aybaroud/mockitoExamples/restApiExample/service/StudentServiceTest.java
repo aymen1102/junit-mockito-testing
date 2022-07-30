@@ -1,9 +1,9 @@
-package com.aybaroud.junitExamples.restapiExamples.service;
+package com.aybaroud.mockitoExamples.restApiExample.service;
 
-import com.aybaroud.junitExamples.restapiExamples.exception.BadRequestException;
-import com.aybaroud.junitExamples.restapiExamples.model.Gender;
-import com.aybaroud.junitExamples.restapiExamples.model.Student;
-import com.aybaroud.junitExamples.restapiExamples.repositories.StudentRepository;
+import com.aybaroud.mockitoExamples.restApiExample.exception.BadRequestException;
+import com.aybaroud.mockitoExamples.restApiExample.model.Gender;
+import com.aybaroud.mockitoExamples.restApiExample.model.Student;
+import com.aybaroud.mockitoExamples.restApiExample.repositories.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -24,17 +24,17 @@ class StudentServiceTest {
 
     @Mock
     private StudentRepository studentRepository;
-    private StudentService underTest;
+    private StudentService studentService;
 
     @BeforeEach
     void setUp() {
-        underTest = new StudentService(studentRepository);
+        studentService = new StudentService(studentRepository);
     }
 
     @Test
     void getAllStudents() {
         //when
-        underTest.getAllStudents();
+        studentService.getAllStudents();
         //then
         verify(studentRepository).findAll();
     }
@@ -48,7 +48,7 @@ class StudentServiceTest {
                 Gender.FEMALE
         );
         //when
-        underTest.addStudent(student);
+        studentService.addStudent(student);
 
         //then
         ArgumentCaptor<Student> studentArgumentCaptor = ArgumentCaptor.forClass(Student.class);
@@ -58,7 +58,7 @@ class StudentServiceTest {
         // assertThat(capturedStudent).isEqualTo(student);
     }
 
-    /**
+
     @Test
     void willThrowWhenEmail() {
         //given
@@ -72,12 +72,12 @@ class StudentServiceTest {
 
         //when
         //then
-        assertThatThrownBy(()->underTest.addStudent(student))
+        assertThatThrownBy(()->studentService.addStudent(student))
                 .isInstanceOf(BadRequestException.class)
                 .hasMessageContaining("Email " + student.getEmail() + " taken");
 
         verify(studentRepository, never()).save(any());
-    } */
+    }
 
     @Test
     @Disabled

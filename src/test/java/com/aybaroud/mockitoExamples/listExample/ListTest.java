@@ -3,6 +3,7 @@ package com.aybaroud.mockitoExamples.listExample;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,9 +15,11 @@ class ListTest {
     void letsMockListSizeMethod() {
         /* Mock List class */
         List mockList = Mockito.mock(List.class);
+        /* given */
+        int given = 2;
         /* when then */
         Mockito.when(mockList.size())
-                .thenReturn(2);
+                .thenReturn(given);
         /* begin test */
         int expected = 2;
         int actual = mockList.size();
@@ -27,11 +30,13 @@ class ListTest {
     void letsMockListSizeMethod_ReturnMultipleValue() {
         /* Mock List class */
         List mockList = Mockito.mock(List.class);
+        /* given */
+        List<Integer> givenList = Arrays.asList(2, 3, 4);
         /* when then */
         Mockito.when(mockList.size())
-                .thenReturn(2)
-                .thenReturn(3)
-                .thenReturn(4);
+                .thenReturn(givenList.get(0))
+                .thenReturn(givenList.get(1))
+                .thenReturn(givenList.get(3));
         /* begin test */
         int actual = mockList.size();
         assertEquals(2, actual);
@@ -43,9 +48,11 @@ class ListTest {
     void letsMockListGet() {
         /* Mock List class */
         List mockList = Mockito.mock(List.class);
+        /* given */
+        String given ="Aymen";
         /* when then */
         Mockito.when(mockList.get(0))
-                .thenReturn("Aymen");
+                .thenReturn(given);
         /* begin test */
         String expected = "Aymen";
         String actual = (String) mockList.get(0);
@@ -57,9 +64,11 @@ class ListTest {
     void letsMockListGet_UsingArgumentMatcher() {
         /* Mock List class */
         List mockList = Mockito.mock(List.class);
+        /* given */
+        String given ="Aymen";
         /* when then */
         Mockito.when(mockList.get(anyInt()))
-                .thenReturn("Aymen");
+                .thenReturn(given);
         /* begin test */
         String expected = "Aymen";
         assertEquals(expected, mockList.get(23));

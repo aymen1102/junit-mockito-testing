@@ -1,4 +1,4 @@
-package com.aybaroud.junitExamples.restapiExamples.model;
+package com.aybaroud.mockitoExamples.restApiExample.model;
 
 import lombok.*;
 

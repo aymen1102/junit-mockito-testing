@@ -1,9 +1,9 @@
-package com.aybaroud.junitExamples.restapiExamples.service;
+package com.aybaroud.mockitoExamples.restApiExample.service;
 
-import com.aybaroud.junitExamples.restapiExamples.repositories.StudentRepository;
-import com.aybaroud.junitExamples.restapiExamples.model.Student;
-import com.aybaroud.junitExamples.restapiExamples.exception.StudentNotFoundException;
-import com.aybaroud.junitExamples.restapiExamples.exception.BadRequestException;
+import com.aybaroud.mockitoExamples.restApiExample.repositories.StudentRepository;
+import com.aybaroud.mockitoExamples.restApiExample.model.Student;
+import com.aybaroud.mockitoExamples.restApiExample.exception.StudentNotFoundException;
+import com.aybaroud.mockitoExamples.restApiExample.exception.BadRequestException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

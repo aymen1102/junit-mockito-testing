@@ -1,7 +1,7 @@
-package com.aybaroud.junitExamples.restapiExamples.controller;
+package com.aybaroud.mockitoExamples.restApiExample.controller;
 
-import com.aybaroud.junitExamples.restapiExamples.model.Student;
-import com.aybaroud.junitExamples.restapiExamples.service.StudentService;
+import com.aybaroud.mockitoExamples.restApiExample.model.Student;
+import com.aybaroud.mockitoExamples.restApiExample.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

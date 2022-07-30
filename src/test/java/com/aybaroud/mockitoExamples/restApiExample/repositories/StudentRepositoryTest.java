@@ -1,7 +1,7 @@
-package com.aybaroud.junitExamples.restapiExamples.repositories;
+package com.aybaroud.mockitoExamples.restApiExample.repositories;
 
-import com.aybaroud.junitExamples.restapiExamples.model.Gender;
-import com.aybaroud.junitExamples.restapiExamples.model.Student;
+import com.aybaroud.mockitoExamples.restApiExample.model.Gender;
+import com.aybaroud.mockitoExamples.restApiExample.model.Student;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -10,27 +10,23 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 @DataJpaTest
 class StudentRepositoryTest {
-    /*
+
     @Autowired
-    private StudentRepository underTest;
+    private StudentRepository studentRepository;
 
     @AfterEach
     void tearDown() {
-        underTest.deleteAll();
+        studentRepository.deleteAll();
     }
 
     @Test
     void itShouldCheckIfStudentEmailExists() {
         // given
         String email = "amina@gmail.com";
-        Student student = new Student(
-                "Amina",
-                email,
-                Gender.FEMALE
-        );
-        underTest.save(student);
+        Student student = new Student("Amina",email,Gender.FEMALE);
+        studentRepository.save(student);
         // when
-        Boolean expected = underTest.selectExistsEmail(email);
+        Boolean expected = studentRepository.selectExistsEmail(email);
         // then
         Assertions.assertThat(expected).isTrue();
     }
@@ -40,8 +36,8 @@ class StudentRepositoryTest {
         // given
         String email = "amina@gmail.com";
         // when
-        Boolean expected = underTest.selectExistsEmail(email);
+        Boolean expected = studentRepository.selectExistsEmail(email);
         // then
         Assertions.assertThat(expected).isFalse();
-    }*/
+    }
 }
