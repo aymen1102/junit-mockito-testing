@@ -17,9 +17,6 @@ public class SpyTest {
     @Spy
     private List<String> spiedList;
 
-    //////////////////////////////////////////////////////////////
-    //           Spy annotation                                 //
-    //////////////////////////////////////////////////////////////
     @Test
     void whenNotUseSpyAnnotation_thenCorrect() {
         List<String> spyList = Mockito.spy(ArrayList.class);

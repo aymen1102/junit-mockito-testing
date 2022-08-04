@@ -20,13 +20,11 @@ class TodoBusinessImplTest {
      void retrieveTodoListRelatedToSpring_withList() {
           /* Mock TodoService */
           TodoService todoService = Mockito.mock(TodoService.class);
-
           /* given */
           List<String> todoList = Arrays.asList("Learn spring", "Learn java");
           /* when then */
           Mockito.when(todoService.getToDoListFromUser("username"))   // when
                   .thenReturn(todoList);                              // return
-
           /* begin test */
           TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
           int expected = 1;
@@ -38,13 +36,11 @@ class TodoBusinessImplTest {
      void retrieveTodoListRelatedToSpring_withEmptyList() {
           /* Mock TodoService */
           TodoService todoService = Mockito.mock(TodoService.class);
-
           /* given */
           List<String> todoList = List.of();
           /* when then */
           Mockito.when(todoService.getToDoListFromUser("username"))
                     .thenReturn(todoList);
-
           /* begin test */
           TodoBusinessImpl todoBusinessImpl = new TodoBusinessImpl(todoService);
           List<String> toDoListRelatedToSpring = todoBusinessImpl.retrieveTodoListRelatedToSpring("username");
