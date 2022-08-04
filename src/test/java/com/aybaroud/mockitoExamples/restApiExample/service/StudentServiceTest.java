@@ -4,6 +4,7 @@ import com.aybaroud.mockitoExamples.restApiExample.exception.BadRequestException
 import com.aybaroud.mockitoExamples.restApiExample.model.Gender;
 import com.aybaroud.mockitoExamples.restApiExample.model.Student;
 import com.aybaroud.mockitoExamples.restApiExample.repositories.StudentRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
@@ -40,7 +42,7 @@ class StudentServiceTest {
     }
 
     @Test
-    void canAddStudent() {
+    void addStudent() {
         //given
         Student student = new Student(
                 "melanie",
@@ -49,13 +51,13 @@ class StudentServiceTest {
         );
         //when
         studentService.addStudent(student);
-
         //then
         ArgumentCaptor<Student> studentArgumentCaptor = ArgumentCaptor.forClass(Student.class);
-        verify(studentRepository).save(studentArgumentCaptor.capture());
-
+        verify(studentRepository)
+                .save(studentArgumentCaptor.capture());  // ArgumentCaptor allows us to capture an argument passed to a method in order to inspect it.
+                                                         // This is especially useful when we can't access the argument outside of the method we'd like to test.
         Student capturedStudent = studentArgumentCaptor.getValue();
-        // assertThat(capturedStudent).isEqualTo(student);
+        Assertions.assertThat(capturedStudent).isEqualTo(student);
     }
 
 
@@ -69,13 +71,11 @@ class StudentServiceTest {
         );
         given(studentRepository.selectExistsEmail(anyString()))
                 .willReturn(true);
-
         //when
         //then
         assertThatThrownBy(()->studentService.addStudent(student))
                 .isInstanceOf(BadRequestException.class)
                 .hasMessageContaining("Email " + student.getEmail() + " taken");
-
         verify(studentRepository, never()).save(any());
     }
 

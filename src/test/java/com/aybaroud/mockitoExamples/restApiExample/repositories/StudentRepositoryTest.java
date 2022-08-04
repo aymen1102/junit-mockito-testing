@@ -22,7 +22,7 @@ class StudentRepositoryTest {
     }
 
     @Test
-    void itShouldCheckIfStudentEmailExists_assertj() {
+    void itShouldCheckIfStudentEmailExists() {
         String email = "amina@gmail.com";
         Student student = new Student("Amina",email,Gender.FEMALE);
         studentRepository.save(student);
@@ -31,8 +31,15 @@ class StudentRepositoryTest {
     }
 
     @Test
+    void itShouldCheckIfStudentEmailDoesNotExists() {
+        String email = "amina@gmail.com";
+        Boolean expected = studentRepository.selectExistsEmail(email);
+        Assertions.assertThat(expected).isFalse();
+    }
+
+
+    @Test
     void itShouldCheckIfStudentEmailExists_mockito(){
-        /* mock studentRepository*/
         StudentRepository studentRepositorySpy = Mockito.spy(StudentRepository.class);
         /* given */
         boolean given = true;
@@ -44,13 +51,7 @@ class StudentRepositoryTest {
         Mockito.doReturn(given)
                 .when(studentRepositorySpy)
                 .selectExistsEmail(email);
-        Mockito.doReturn(email)
-                .when(studentRepositorySpy)
-                .findAll().get(0).getEmail().toString();
-        /* begin test */
-        boolean actual = studentRepositorySpy.selectExistsEmail(email);
-        assertEquals(email,studentRepositorySpy.findAll().get(0).getEmail());
-        assertTrue(actual);
+        assertTrue(studentRepositorySpy.selectExistsEmail(email));
     }
 
     @Test
@@ -67,14 +68,9 @@ class StudentRepositoryTest {
                 .thenReturn(given);
         /* begin test */
         boolean actual = studentRepository.selectExistsEmail(email);
-        assertEquals(email,studentRepository.findAll().get(0).getEmail());
         assertTrue(actual);
     }
 
-    @Test
-    void itShouldCheckIfStudentEmailDoesNotExists() {
-        String email = "amina@gmail.com";
-        Boolean expected = studentRepository.selectExistsEmail(email);
-        Assertions.assertThat(expected).isFalse();
-    }
+
+
 }

@@ -36,12 +36,11 @@ class ListTest {
         Mockito.when(mockList.size())
                 .thenReturn(givenList.get(0))
                 .thenReturn(givenList.get(1))
-                .thenReturn(givenList.get(3));
+                .thenReturn(givenList.get(2));
         /* begin test */
-        int actual = mockList.size();
-        assertEquals(2, actual);
-        assertEquals(3, actual);
-        assertEquals(4, actual);
+        assertEquals(2, mockList.size());
+        assertEquals(3, mockList.size());
+        assertEquals(4, mockList.size());
     }
 
     @Test

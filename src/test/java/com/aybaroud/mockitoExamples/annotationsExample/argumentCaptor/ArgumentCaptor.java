@@ -6,11 +6,13 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * ArgumentCaptor allows us to capture an argument passed to a method in order to inspect it.
+ * his is especially useful when we can't access the argument outside of the method we'd like to test.
+ */
 @ExtendWith(MockitoExtension.class)
 public class ArgumentCaptor {
 
@@ -20,9 +22,6 @@ public class ArgumentCaptor {
     @Mock
     private List<String> mockedList;
 
-    //////////////////////////////////////////////////////////////
-    //           ArgumentCaptor annotation                      //
-    //////////////////////////////////////////////////////////////
     @Test
     void whenNotUseCaptorAnnotation_thenCorrect() {
         List mockList = Mockito.mock(List.class);
@@ -36,7 +35,8 @@ public class ArgumentCaptor {
     @Test
     void whenUseCaptorAnnotation_thenTheSam() {
         mockedList.add("one");
-        Mockito.verify(mockedList).add((String) argumentCaptor.capture());
+        Mockito.verify(mockedList)
+                .add((String) argumentCaptor.capture());
         /* begin test */
         assertEquals("one", argumentCaptor.getValue());
     }
